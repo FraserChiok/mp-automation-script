@@ -18,7 +18,7 @@ This script automates the setup of Logical Volume Management (LVM) on a Linux sy
 2. Navigate to the directory containing the script:
 
     ```bash
-    cd mp-automation-script/setup_lvm
+    cd mp-automation-script/
     ```
 
 3. Make the script executable:
