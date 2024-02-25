@@ -18,7 +18,7 @@ This script automates the setup of Logical Volume Management (LVM) on a Linux sy
 2. Navigate to the directory containing the script:
 
     ```bash
-    cd mp-automation-script
+    cd mp-automation-script/setup_lvm
     ```
 
 3. Make the script executable:
@@ -27,32 +27,29 @@ This script automates the setup of Logical Volume Management (LVM) on a Linux sy
     chmod +x setup_lvm.sh
     ```
 
-4. Execute the script:
+4. Customize the script by modifying the variables at the beginning:
+
+    ```bash
+    # Define variables
+    ACTUALDIR="/var/log"       # Specify the directory to mount the logical volume.
+    VG="vg0"                   # Specify the volume group name.
+    DEVICE="/dev/nvme0n1"      # Specify the device on which to create the volume group.
+    LV_SIZE="2G"               # Specify the size of the logical volume.
+    ```
+
+5. Execute the script:
 
     ```bash
     ./setup_lvm.sh
     ```
 
-5. After running the script, manually check the logical volume by using `lsblk`:
+6. After running the script, manually check the logical volume by using `lsblk`:
 
     ```bash
     lsblk
     ```
-
-### Customization
-
-You can customize the script by modifying the variables at the beginning of the script:
-
-- `ACTUALDIR`: Specify the directory to mount the logical volume.
-- `VG`: Specify the volume group name.
-- `DEVICE`: Specify the device on which to create the volume group.
-- `LV_SIZE`: Specify the size of the logical volume.
 
 ### Example Output
-
-    ```bash
-    lsblk
-    ```
 
 ```plaintext
 NAME                MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
